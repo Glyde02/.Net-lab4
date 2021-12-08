@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeneratorLib;
+using System;
 
 namespace lab4
 {
@@ -6,7 +7,13 @@ namespace lab4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var generatingOptions = new GeneratingOptions();
+            
+            generatingOptions.SourceDirectory = @"";
+            generatingOptions.DestinationDirectory = @"";
+            Generator.GenerateAsync(generatingOptions).Wait();
+            
+            
         }
     }
 }
